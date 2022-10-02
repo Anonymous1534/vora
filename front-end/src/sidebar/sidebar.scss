@@ -1,0 +1,231 @@
+@import "../styles/var.scss";
+
+.main {
+  .main-left {
+    flex: 0 0 40px;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    position: relative;
+    transition: 0.5s;
+    overflow: hidden;
+    .button-sidebar {
+      z-index: 1;
+      cursor: pointer;
+      position: absolute;
+      right: 0px;
+      top: 5%;
+      background-color: $color-light-purple;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: $color-purple;
+      transform: rotate(0deg);
+      transition: 0.5s;
+    }
+    &.active {
+      flex: 0 0 $size-side-bar;
+      max-width: $size-side-bar;
+      transition: 0.5s;
+      overflow: hidden;
+      .sidebar-main {
+        .sidebar-top,
+        .sidebar-bottom {
+          opacity: 1;
+          transition: 0.5s;
+        }
+      }
+      .button-sidebar {
+        z-index: 1;
+        transform: rotate(180deg);
+        transition: 0.5s;
+      }
+    }
+    .sidebar-main {
+      background-color: #fff;
+      height: calc(100vh - ($padding-left-right-side-bar * 2));
+      margin-right: 10px;
+      padding: $padding-left-right-side-bar;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .sidebar-top {
+        opacity: 0;
+        .sm-logo {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          img {
+            max-width: 75px;
+            width: 100%;
+          }
+          .sm-lg-company {
+            .sm-lg-com-title {
+              font-size: 16px;
+              font-weight: bold;
+              color: $color-purple;
+              margin-bottom: 5px;
+              letter-spacing: -0.8px;
+            }
+            .sm-lg-com-desc {
+              font-size: 10px;
+              color: $color-light-gray;
+            }
+          }
+        }
+        .sm-menus {
+          padding: 15px 0;
+          position: relative;
+          .sm-sm-items {
+            margin: 0 0 5px;
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 8px 15px 8px calc($padding-left-right-side-bar + 15px);
+              margin-left: -$padding-left-right-side-bar;
+              border-radius: 0 5px 5px 0;
+              background-color: #fff;
+              transition: 0.5s;
+              position: relative;
+              &::before {
+                content: "";
+                background-color: transparent;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                transition: 0.5s;
+              }
+              .smsm-i-left {
+                display: flex;
+                align-items: center;
+                .smsm-i-ico {
+                  margin-right: 10px;
+                  svg {
+                    fill: $color-light-gray;
+                    transition: 0.5s;
+                  }
+                }
+                .smsm-i-text {
+                  color: $color-light-gray;
+                }
+              }
+              .smsm-i-right {
+                .smsm-ir-badge {
+                  background-color: $color-lightness-gray;
+                  color: $color-light-gray;
+                  padding: 7px 0;
+                  border-radius: 5px;
+                  width: 24px;
+                  display: block;
+                  text-align: center;
+                  &.danger {
+                    color: #fff;
+                    background-color: $color-red;
+                  }
+                }
+              }
+              &:hover {
+                background-color: $color-lightness-gray;
+                transition: 0.5s;
+                &::before {
+                  content: "";
+                  background-color: $color-purple;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 3px;
+                  height: 100%;
+                  transition: 0.5s;
+                }
+                .smsm-i-left {
+                  .smsm-i-ico {
+                    svg {
+                      fill: $color-purple;
+                      transition: 0.5s;
+                    }
+                  }
+                  .smsm-i-text {
+                    font-weight: bold;
+                    color: $color-dark-gray;
+                  }
+                }
+              }
+            }
+          }
+          &.header-menus {
+            &::before {
+              content: "";
+              width: calc(100% + ($padding-left-right-side-bar * 2));
+              height: 1px;
+              background-color: $color-lightness-gray;
+              position: absolute;
+              left: -$padding-left-right-side-bar;
+              right: 0;
+              bottom: 0;
+            }
+          }
+          &.main-menus {
+            padding: 30px 0 15px;
+          }
+        }
+      }
+      .sidebar-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 25px 0 0;
+        opacity: 0;
+        &::before {
+          content: "";
+          width: calc(100% + ($padding-left-right-side-bar * 2));
+          height: 1px;
+          background-color: $color-lightness-gray;
+          position: absolute;
+          left: -$padding-left-right-side-bar;
+          right: 0;
+          top: 0;
+        }
+        .sb-usr-left {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          .sb-usr-img {
+            img {
+              max-width: 35px;
+              border-radius: 50%;
+              width: 100%;
+              height: 35px;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          .sb-usr-info {
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .sbusr-info-name {
+              font-size: 14px;
+              color: $color-dark-gray;
+              font-weight: bold;
+              padding-bottom: 5px;
+            }
+            .sbusr-info-role {
+              font-size: 10px;
+              color: $color-light-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
