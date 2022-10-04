@@ -1,10 +1,9 @@
 import Sidebar from "./sidebar";
-import Content from "./content";
+import Components from "./components";
 import { useState } from "react";
 
 const App = () => {
   const [activeSideBar, SetActiveSideBar] = useState(true);
-  console.log("🚀 ~ activeSideBar", activeSideBar);
 
   const toggleSideBar = () => {
     SetActiveSideBar(!activeSideBar);
@@ -33,8 +32,8 @@ const App = () => {
         </div>
         <Sidebar />
       </div>
-      <div className="main-right">
-        <Content />
+      <div className={`main-right ${activeSideBar ? "active" : ""}`}>
+        <Components />
       </div>
     </div>
   );

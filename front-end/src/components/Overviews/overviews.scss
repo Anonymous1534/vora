@@ -1,0 +1,38 @@
+@import "../../styles/var.scss";
+
+.overview-page {
+  .overview-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-blue;
+  }
+  .overview-box {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    .overview-box-items {
+      max-width: calc(25% - 15px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 0 7.5px;
+      box-shadow: 0 0 20px 0px #0000000f;
+      .obi-left {
+        .obi-l-title {
+          color: $color-light-gray;
+        }
+        .obi-l-count {
+          padding-top: 15px;
+          font-size: 18px;
+          color: $color-blue;
+        }
+      }
+      .obi-right {
+      }
+    }
+  }
+}

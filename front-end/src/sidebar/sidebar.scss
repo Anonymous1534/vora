@@ -53,6 +53,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 0 8px 0px #00000014;
       .sidebar-top {
         opacity: 0;
         .sm-logo {
@@ -114,6 +115,7 @@
                 }
                 .smsm-i-text {
                   color: $color-light-gray;
+                  transition: 0.5s;
                 }
               }
               .smsm-i-right {
@@ -152,8 +154,8 @@
                     }
                   }
                   .smsm-i-text {
-                    font-weight: bold;
                     color: $color-dark-gray;
+                    transition: 0.5s;
                   }
                 }
               }
@@ -215,7 +217,7 @@
             align-items: flex-start;
             .sbusr-info-name {
               font-size: 14px;
-              color: $color-dark-gray;
+              color: $color-blue;
               font-weight: bold;
               padding-bottom: 5px;
             }
@@ -226,6 +228,18 @@
           }
         }
       }
+    }
+  }
+  .main-right {
+    flex: 0 0 calc(100% - 40px);
+    width: calc(100% - 40px);
+    max-width: 100%;
+    margin: 0;
+    transition: 0.5s;
+    &.active {
+      flex: 0 0 calc(100% - $size-side-bar);
+      width: calc(100% - $size-side-bar);
+      transition: 0.5s;
     }
   }
 }

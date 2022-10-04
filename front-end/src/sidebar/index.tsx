@@ -1,6 +1,7 @@
 import "./sidebar.scss";
 import logo from "../assets/logo.png";
 import profileImg from "../assets/profile.jpeg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -15,7 +16,7 @@ const Sidebar = () => {
         </div>
         <div className="sm-menus header-menus">
           <div className="sm-sm-items">
-            <a href="#">
+            <Link to="/">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -37,12 +38,12 @@ const Sidebar = () => {
               <div className="smsm-i-right">
                 <div className="smsm-ir-badge">10</div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="sm-menus main-menus">
           <div className="sm-sm-items">
-            <a href="#">
+            <Link to="/dashboard">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -101,10 +102,10 @@ const Sidebar = () => {
                 <div className="smsm-i-text">Dashboard</div>
               </div>
               <div className="smsm-i-right"></div>
-            </a>
+            </Link>
           </div>
           <div className="sm-sm-items">
-            <a href="#">
+            <Link to="/shipments">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -123,10 +124,10 @@ const Sidebar = () => {
                 <div className="smsm-i-text">Shipments</div>
               </div>
               <div className="smsm-i-right"></div>
-            </a>
+            </Link>
           </div>
           <div className="sm-sm-items">
-            <a href="#">
+            <Link to="parcels">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -174,7 +175,7 @@ const Sidebar = () => {
               <div className="smsm-i-right">
                 <div className="smsm-ir-badge danger">2</div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
