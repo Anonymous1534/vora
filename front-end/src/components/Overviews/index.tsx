@@ -1,6 +1,45 @@
+import { Link } from "react-router-dom";
 import "./overviews.scss";
+import DataTable from "react-data-table-component";
 
 const Overviews = () => {
+  const percentWork = 87;
+  const progressStyle = "rotate(" + ((180 * percentWork) / 100 + 45) + "deg)";
+  const columns = [
+    {
+      name: "Destination",
+      selector: (row: any) => row.destination,
+    },
+    {
+      name: "Truck",
+      selector: (row: any) => row.truck,
+    },
+    {
+      name: "Time arrive",
+      selector: (row: any) => row.time_arrive,
+    },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      destination: "Valencia - Barcelona",
+      truck: "B453553",
+      time_arrive: "07:49AM",
+    },
+    {
+      id: 2,
+      destination: "Valencia - Barcelona",
+      truck: "B453553",
+      time_arrive: "07:49AM",
+    },
+    {
+      id: 3,
+      destination: "Valencia - Barcelona",
+      truck: "B453553",
+      time_arrive: "07:49AM",
+    },
+  ];
   return (
     <div className="overview-page">
       <div className="overview-title">Overview</div>
@@ -58,7 +97,7 @@ const Overviews = () => {
                   points="256.003,256.002 256.003,512 483.005,384.007 483.005,127.997 "
                 />
                 <polygon
-                  style={{ fill: "#898686;" }}
+                  style={{ fill: "#898686" }}
                   points="402.959,270.659 369.019,247.073 333.995,309.437 359.779,294.939 359.779,400.591 
 	377.722,390.471 377.722,284.849 "
                 />
@@ -362,6 +401,94 @@ const Overviews = () => {
                 <g></g>
                 <g></g>
               </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="overview-card-box">
+        <div className="ocb-card">
+          <div className="ocb-header">
+            <div className="ocb-title">Delayed delivery</div>
+            <div className="ocb-more">
+              <Link to="/">Show all</Link>
+            </div>
+          </div>
+          <div className="ocb-body">
+            <div className="ocb-table">
+              <DataTable columns={columns} data={data} />
+            </div>
+          </div>
+        </div>
+        <div className="ocb-card">
+          <div className="ocb-header">
+            <div className="ocb-title">Daily plan</div>
+          </div>
+          <div className="ocb-body">
+            <div className="ocb-plan">
+              <div className="ocb-plan-left">
+                <div className="ocb-pl-items">
+                  <div className="ocb-pl-i-group">
+                    <div className="ocb-pl-i-title">Shipments processed</div>
+                    <div className="ocb-pl-i-counting">
+                      1 010 <span>/2 020</span>
+                    </div>
+                  </div>
+                  <div className="ocb-pl-i-group">
+                    <div className="ocb-pl-i-title">Orders processed</div>
+                    <div className="ocb-pl-i-counting">
+                      650 <span>/2 020</span>
+                    </div>
+                  </div>
+                  <div className="ocb-pl-i-group">
+                    <div className="ocb-pl-i-title">Requests considered</div>
+                    <div className="ocb-pl-i-counting">
+                      10 <span>/2 020</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="ocb-plan-right">
+                <div className="ocb-plan-pgb">
+                  <div className="ocb-p-pgb-bar-overflow">
+                    <div
+                      className="ocb-p-pgb-bar"
+                      style={{
+                        transform: progressStyle,
+                      }}
+                    ></div>
+                  </div>
+
+                  <span className="left">0%</span>
+                  <span className="center">{percentWork}%</span>
+                  <span className="right">100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="ocb-card">
+          <div className="ocb-header">
+            <div className="ocb-title">Delayed delivery</div>
+            <div className="ocb-more">
+              <Link to="/">Show all</Link>
+            </div>
+          </div>
+          <div className="ocb-body">
+            <div className="ocb-table">
+              <DataTable columns={columns} data={data} />
+            </div>
+          </div>
+        </div>
+        <div className="ocb-card">
+          <div className="ocb-header">
+            <div className="ocb-title">Delayed delivery</div>
+            <div className="ocb-more">
+              <Link to="/">Show all</Link>
+            </div>
+          </div>
+          <div className="ocb-body">
+            <div className="ocb-table">
+              <DataTable columns={columns} data={data} />
             </div>
           </div>
         </div>

@@ -1,11 +1,12 @@
 @import "reboot.scss";
 @import "var.scss";
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 body {
   font-family: "Comfortaa", cursive;
   font-size: 13px;
-  background-color: #f6f6f8;
+  background-color: $color-lightness-gray2;
   line-height: normal;
+  color: $color-blue;
 }
 img {
   max-width: 100%;

@@ -35,4 +35,143 @@
       }
     }
   }
+  .overview-card-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0 0;
+    .ocb-card {
+      display: flex;
+      flex-direction: column;
+      max-width: calc(50% - 75px);
+      width: 100%;
+      margin: 0 7.5px 15px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      .ocb-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 15px;
+        padding-bottom: 25px;
+        .ocb-title {
+          font-size: 18px;
+          color: $color-blue;
+        }
+        .ocb-more {
+          a {
+            color: $color-purple;
+            position: relative;
+            &::before {
+              content: ">";
+              position: absolute;
+              left: calc(100% + 5px);
+              color: $color-purple;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+      .ocb-body {
+        .ocb-table {
+          .rdt_Table {
+            .rdt_TableHead {
+              .rdt_TableHeadRow {
+                background-color: $color-lightness-gray2;
+                border-bottom: 0px solid transparent;
+                border-radius: 10px;
+                .hbotQl {
+                  color: $color-light-gray;
+                }
+              }
+            }
+            .rdt_TableBody {
+              .rdt_TableRow {
+                .rdt_TableCell {
+                  color: $color-blue;
+                }
+              }
+            }
+          }
+        }
+        .ocb-plan {
+          display: flex;
+          align-items: center;
+          .ocb-plan-left {
+            max-width: 100%;
+            width: 100%;
+            .ocb-pl-items {
+              display: flex;
+              flex-direction: column;
+              .ocb-pl-i-group {
+                margin: 0 0 30px;
+                .ocb-pl-i-title {
+                  color: $color-light-gray;
+                  margin: 0 0 10px;
+                }
+                .ocb-pl-i-counting {
+                  font-size: 16px;
+                  span {
+                    color: $color-light-gray;
+                  }
+                }
+              }
+            }
+          }
+          .ocb-plan-right {
+            max-width: $size-pgb-overview;
+            width: 100%;
+            .ocb-plan-pgb {
+              position: relative;
+              .ocb-p-pgb-bar-overflow {
+                position: relative;
+                overflow: hidden;
+                width: $size-pgb-overview;
+                height: calc($size-pgb-overview/2);
+                .ocb-p-pgb-bar {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: $size-pgb-overview;
+                  height: $size-pgb-overview;
+                  border-radius: 50%;
+                  box-sizing: border-box;
+                  border: 13px solid $color-lightness-gray;
+                  border-bottom-color: $color-green;
+                  border-right-color: $color-green;
+                }
+              }
+
+              span {
+                &.left {
+                  position: absolute;
+                  top: calc(100% + 15px);
+                  left: 0;
+                  font-size: 12px;
+                  color: $color-light-gray;
+                }
+                &.center {
+                  position: absolute;
+                  top: calc(100% + 15px);
+                  left: 0;
+                  right: 0;
+                  text-align: center;
+                  font-size: 20px;
+                  color: $color-green;
+                }
+                &.right {
+                  position: absolute;
+                  top: calc(100% + 15px);
+                  right: 0;
+                  font-size: 12px;
+                  color: $color-light-gray;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
