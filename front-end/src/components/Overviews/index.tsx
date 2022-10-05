@@ -3,7 +3,39 @@ import "./overviews.scss";
 import DataTable from "react-data-table-component";
 
 const Overviews = () => {
-  const percentWork = 87;
+  const colors = {
+    red: "#eb5769",
+    orange: "#f2af4c",
+    green: "#5dc983",
+  };
+  const avaliableTruck = [
+    {
+      plate: "V430303",
+      routeFrom: "Barcelana",
+      routeTo: "Valencia",
+      process: 86,
+    },
+    {
+      plate: "V430303",
+      routeFrom: "Barcelana",
+      routeTo: "Valencia",
+      process: 50,
+    },
+    {
+      plate: "V430303",
+      routeFrom: "Barcelana",
+      routeTo: "Valencia",
+      process: 25,
+    },
+  ];
+
+  const percentWorkTotals = avaliableTruck.reduce(
+    (previousValue, currentValue) => previousValue + currentValue.process,
+    0
+  );
+  const percentWork: any = Number(
+    (percentWorkTotals * 100) / (avaliableTruck.length * 100)
+  ).toFixed(0);
   const progressStyle = "rotate(" + ((180 * percentWork) / 100 + 45) + "deg)";
   const columns = [
     {
@@ -19,6 +51,31 @@ const Overviews = () => {
       selector: (row: any) => row.time_arrive,
     },
   ];
+
+  const selectColor = (percent: any) => {
+    let seletedColor;
+    switch (true) {
+      case percent < 30:
+        seletedColor = {
+          color: colors.green,
+          name: "green",
+        };
+        break;
+      case percent > 85:
+        seletedColor = {
+          color: colors.red,
+          name: "red",
+        };
+        break;
+      default:
+        seletedColor = {
+          color: colors.orange,
+          name: "orange",
+        };
+        break;
+    }
+    return seletedColor;
+  };
 
   const data = [
     {
@@ -468,15 +525,46 @@ const Overviews = () => {
         </div>
         <div className="ocb-card">
           <div className="ocb-header">
-            <div className="ocb-title">Delayed delivery</div>
+            <div className="ocb-title">Avaliable trucks</div>
             <div className="ocb-more">
               <Link to="/">Show all</Link>
             </div>
           </div>
           <div className="ocb-body">
-            <div className="ocb-table">
-              <DataTable columns={columns} data={data} />
-            </div>
+            {avaliableTruck.map((truck: any) => {
+              const seletedColor = selectColor(truck.process);
+
+              return (
+                <div className="ocb-truck-avaliable-truck">
+                  <div className="ocb-tat-left">
+                    <div className="ocb-tat-l-title">{truck.plate}</div>
+                    <div className="ocb-tat-l-desc">
+                      {truck.routeFrom} - {truck.routeTo}
+                    </div>
+                  </div>
+                  <div className={`ocb-tat-right ${seletedColor.name}`}>
+                    <div className="ocb-tat-r-counting">
+                      <span>{truck.process}</span>/100%
+                    </div>
+                    <div className="ocb-tat-r-pgb">
+                      <div
+                        className="ocb-tat-r-pgb-bar"
+                        style={{
+                          background:
+                            "linear-gradient(to right," +
+                            seletedColor.color +
+                            " " +
+                            truck.process +
+                            "%, #e8e8e8 " +
+                            truck.process +
+                            "%)",
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="ocb-card">

@@ -171,6 +171,69 @@
             }
           }
         }
+        .ocb-truck-avaliable-truck{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid $color-lightness-gray;
+          .ocb-tat-left{
+            width: 100%;
+            .ocb-tat-l-title{
+              font-size: 16px;
+              color : $color-blue;
+              padding-bottom: 10px;
+            }
+            .ocb-tat-l-desc{
+              color : $color-light-gray;
+            }
+          }
+          .ocb-tat-right{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            &.red{
+              .ocb-tat-r-counting{
+                span{
+                  color : $color-red
+                }
+              }
+            }
+            &.green{
+              .ocb-tat-r-counting{
+                span{
+                  color : $color-green
+                }
+              }
+            }
+            &.orange{
+              .ocb-tat-r-counting{
+                span{
+                  color : $color-orange
+                }
+              }
+            }
+            .ocb-tat-r-counting{
+              color: $color-light-gray;
+              margin : 0 0 10px;
+              text-align: right;
+            }
+            .ocb-tat-r-pgb{
+              position: relative;
+              height: 2px;
+              border-radius: 15px;
+              width: 100%;
+              display: block;
+              .ocb-tat-r-pgb-bar{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient($color-lightness-gray 0%,$color-lightness-gray 100%);
+              }
+            }
+          }
+        }
       }
     }
   }
