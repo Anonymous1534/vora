@@ -1,7 +1,7 @@
 import "./sidebar.scss";
 import logo from "../assets/logo.png";
 import profileImg from "../assets/profile.jpeg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -16,7 +16,7 @@ const Sidebar = () => {
         </div>
         <div className="sm-menus header-menus">
           <div className="sm-sm-items">
-            <Link to="/">
+            <NavLink to="/notification">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -38,12 +38,12 @@ const Sidebar = () => {
               <div className="smsm-i-right">
                 <div className="smsm-ir-badge">10</div>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
         <div className="sm-menus main-menus">
           <div className="sm-sm-items">
-            <Link to="/dashboard">
+            <NavLink to="/dashboard">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -102,10 +102,10 @@ const Sidebar = () => {
                 <div className="smsm-i-text">Dashboard</div>
               </div>
               <div className="smsm-i-right"></div>
-            </Link>
+            </NavLink>
           </div>
           <div className="sm-sm-items">
-            <Link to="/shipments">
+            <NavLink to="/shipments">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -124,10 +124,10 @@ const Sidebar = () => {
                 <div className="smsm-i-text">Shipments</div>
               </div>
               <div className="smsm-i-right"></div>
-            </Link>
+            </NavLink>
           </div>
           <div className="sm-sm-items">
-            <Link to="parcels">
+            <NavLink to="parcels">
               <div className="smsm-i-left">
                 <div className="smsm-i-ico">
                   <svg
@@ -175,7 +175,7 @@ const Sidebar = () => {
               <div className="smsm-i-right">
                 <div className="smsm-ir-badge danger">2</div>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>

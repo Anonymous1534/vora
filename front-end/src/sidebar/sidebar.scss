@@ -140,6 +140,7 @@
                   }
                 }
               }
+              &.active,
               &:hover {
                 background-color: $color-lightness-gray;
                 transition: 0.5s;
