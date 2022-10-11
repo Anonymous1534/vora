@@ -1,0 +1,21 @@
+@import "../styles/var.scss";
+
+.rdt_Table {
+  .rdt_TableHead {
+    .rdt_TableHeadRow {
+      background-color: $color-lightness-gray2;
+      border-bottom: 0px solid transparent;
+      border-radius: 10px;
+      .hbotQl {
+        color: $color-light-gray;
+      }
+    }
+  }
+  .rdt_TableBody {
+    .rdt_TableRow {
+      .rdt_TableCell {
+        color: $color-blue;
+      }
+    }
+  }
+}

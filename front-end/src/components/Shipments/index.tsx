@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Shipments = () => {
   return (
     <>
@@ -11,7 +12,7 @@ const Shipments = () => {
       </div>
       <div className="shipments-component">
         <div className="shipments-group">
-          <div className="shipments-card">
+          <Link to="/shipments/details" className="shipments-card">
             <div className="sc-header">
               <div className="sc-head-detail">
                 <div className="sc-hl-desination">Barcelona - Valencia</div>
@@ -56,7 +57,7 @@ const Shipments = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
           <div className="shipments-card">
             <div className="sc-header">
               <div className="sc-head-detail">

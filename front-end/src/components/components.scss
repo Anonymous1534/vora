@@ -83,27 +83,6 @@
         }
       }
       .ocb-body {
-        .ocb-table {
-          .rdt_Table {
-            .rdt_TableHead {
-              .rdt_TableHeadRow {
-                background-color: $color-lightness-gray2;
-                border-bottom: 0px solid transparent;
-                border-radius: 10px;
-                .hbotQl {
-                  color: $color-light-gray;
-                }
-              }
-            }
-            .rdt_TableBody {
-              .rdt_TableRow {
-                .rdt_TableCell {
-                  color: $color-blue;
-                }
-              }
-            }
-          }
-        }
         .ocb-plan {
           display: flex;
           align-items: center;
@@ -313,6 +292,18 @@
       }
     }
   }
+  &.shipments-details {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    margin-bottom: 30px;
+    .overview-title {
+      margin-right: 10px;
+    }
+    .overview-time {
+      color: $color-light-gray;
+    }
+  }
 }
 .shipments-component {
   .shipments-group {
@@ -395,67 +386,168 @@
         .sc-b-truck-load {
           max-width: 60%;
           width: 100%;
-          .sc-b-truck-panel {
-            position: relative;
-            width: 400px;
-            height: 245px;
-            margin-left: auto;
-            .sc-b-truck-bg {
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              background-size: 100%;
-              opacity: 0.3;
-              background-position: bottom;
+        }
+      }
+    }
+  }
+}
+.error-component {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: $box-shadow-basic;
+  padding: 15px 30px;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  .error-c-text {
+    margin: 15px 0;
+  }
+  .error-c-btn {
+    padding: 7px 15px;
+    background-color: $color-light-purple;
+    color: $color-purple;
+    display: inline-block;
+    border-radius: 10px;
+    a {
+      color: $color-purple;
+    }
+  }
+}
+.shipment-details-component {
+  display: flex;
+  align-items: flex-start;
+  .sdc-truck-load {
+    max-width: 535px;
+    width: 100%;
+    margin: 0 7.5px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    .sdc-tl-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      .sdc-tl-h-name {
+        font-size: 18px;
+        color: $color-blue;
+      }
+      .sdc-tl-h-percent {
+        font-size: 20px;
+        &.danger {
+          color: $color-red;
+        }
+        &.warning {
+          color: $color-orange;
+        }
+        &.success {
+          color: $color-green;
+        }
+      }
+    }
+    .sdc-tl-truck {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .sdc-tl-truck-load {
+        max-width: 50%;
+        width: 100%;
+        .sdc-tltl-field {
+          font-size: 18px;
+          color: $color-light-gray;
+          margin-bottom: 15px;
+        }
+        .sdc-tltl-value {
+          font-size: 18px;
+          color: $color-blue;
+          span {
+            color: $color-light-gray;
+          }
+        }
+      }
+      .sdc-tl-truck-img {
+        width: 100%;
+      }
+    }
+    .sdc-tl-parcel-box {
+      margin-bottom: 30px;
+      .sdc-tl-pb-title {
+        font-size: 14px;
+        color: $color-blue;
+        margin: 0 0 15px;
+      }
+      .sdc-tl-pb-box {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        .box {
+          width: 100px;
+          margin: 0 3.25px 7.5px;
+          height: 80px;
+          border-radius: 5px;
+          background-color: $color-green;
+          opacity: 0.4;
+          transition: 0.5s;
+          &.selected,
+          &:hover {
+            &:not(.full) {
+              background-color: $color-purple;
+              opacity: 1;
+              transition: 0.5s;
             }
-            .sc-btp-load-percent-on-top {
-              position: absolute;
-              background: linear-gradient(
-                300deg,
-                #e8e8e833 0%,
-                #e8e8e833 10%,
-                transparent 10%,
-                transparent 20%,
-                #e8e8e833 20%,
-                #e8e8e833 30%,
-                transparent 30%,
-                transparent 40%,
-                #e8e8e833 40%,
-                #e8e8e833 50%,
-                transparent 50%,
-                transparent 60%,
-                #e8e8e833 60%,
-                #e8e8e833 70%,
-                transparent 70%,
-                transparent 80%,
-                #e8e8e833 80%,
-                #e8e8e833 90%,
-                transparent 90%,
-                transparent 100%
-              );
-            }
-            .sc-btp-load-percent {
-              position: absolute;
-            }
-            &.iveco-80e18 {
-              .sc-b-truck-bg {
-                background-image: url("../assets/iveco-80e18.png");
-              }
-              .sc-btp-load-percent-on-top,
-              .sc-btp-load-percent {
-                right: 32px;
-                top: 28px;
-                max-width: 230px;
-                width: 100%;
-                height: 130px;
-              }
-            }
+          }
+          &.full {
+            background-color: $color-lightness-gray;
           }
         }
       }
     }
+    .sdc-tl-parcel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .sdc-tl-parcel-view-list {
+        display: flex;
+        padding: 15px;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 15px);
+        margin: 0 7.5px;
+        cursor: pointer;
+        .stpvl-icon {
+          margin-right: 10px;
+        }
+        &.btn-full {
+          background-color: $color-purple;
+          .stpvl-icon {
+            svg {
+              fill: #fff;
+            }
+          }
+          .stpvl-text {
+            color: #fff;
+          }
+        }
+        &.btn-outline {
+          background-color: $color-light-purple;
+          .stpvl-icon {
+            svg {
+              fill: $color-purple;
+            }
+          }
+          .stpvl-text {
+            color: $color-purple;
+          }
+        }
+      }
+    }
+  }
+  .sdc-truck-parcel-available {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 7.5px;
+    background-color: #fff;
+    padding: 30px;
   }
 }

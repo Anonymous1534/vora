@@ -1,0 +1,59 @@
+.sc-b-truck-panel {
+  position: relative;
+  width: 400px;
+  height: 245px;
+  margin-left: auto;
+  .sc-b-truck-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    opacity: 0.3;
+    background-position: bottom;
+  }
+  .sc-btp-load-percent-on-top {
+    position: absolute;
+    background: linear-gradient(
+      300deg,
+      #e8e8e833 0%,
+      #e8e8e833 10%,
+      transparent 10%,
+      transparent 20%,
+      #e8e8e833 20%,
+      #e8e8e833 30%,
+      transparent 30%,
+      transparent 40%,
+      #e8e8e833 40%,
+      #e8e8e833 50%,
+      transparent 50%,
+      transparent 60%,
+      #e8e8e833 60%,
+      #e8e8e833 70%,
+      transparent 70%,
+      transparent 80%,
+      #e8e8e833 80%,
+      #e8e8e833 90%,
+      transparent 90%,
+      transparent 100%
+    );
+  }
+  .sc-btp-load-percent {
+    position: absolute;
+  }
+  &.iveco-80e18 {
+    .sc-b-truck-bg {
+      background-image: url("../assets/iveco-80e18.png");
+    }
+    .sc-btp-load-percent-on-top,
+    .sc-btp-load-percent {
+      right: 32px;
+      top: 28px;
+      max-width: 230px;
+      width: 100%;
+      height: 130px;
+    }
+  }
+}
