@@ -4,6 +4,7 @@ import "./table.scss";
 import Overviews from "./Overviews";
 import Shipments from "./Shipments";
 import Details from "./Shipments/detials";
+import Parcel from "./Parcel";
 import Error from "./Error";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const Components = () => {
           <Route path="/dashboard" element={<Overviews />} />
           <Route path="/shipments" element={<Shipments />} />
           <Route path="/shipments/details" element={<Details />} />
+          <Route path="/parcels" element={<Parcel />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

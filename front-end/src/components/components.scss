@@ -266,31 +266,31 @@
       }
     }
   }
+  .overview-button {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    .ovv-btn-items {
+      padding: 12px 15px;
+      border-radius: 10px;
+      background-color: $color-light-purple;
+      color: $color-purple;
+      margin-right: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.5s;
+      &.active,
+      &:hover {
+        background-color: $color-purple;
+        color: #fff;
+        transition: 0.5s;
+      }
+    }
+  }
   &.shipments {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    .overview-button {
-      display: flex;
-      align-items: center;
-      margin-left: 30px;
-      .ovv-btn-items {
-        padding: 12px 15px;
-        border-radius: 10px;
-        background-color: $color-light-purple;
-        color: $color-purple;
-        margin-right: 10px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: 0.5s;
-        &.active,
-        &:hover {
-          background-color: $color-purple;
-          color: #fff;
-          transition: 0.5s;
-        }
-      }
-    }
   }
   &.shipments-details {
     display: flex;
@@ -302,6 +302,15 @@
     }
     .overview-time {
       color: $color-light-gray;
+    }
+  }
+  &.parcel {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+    .overview-title {
+      margin-right: 10px;
     }
   }
 }
@@ -549,5 +558,33 @@
     margin: 0 7.5px;
     background-color: #fff;
     padding: 30px;
+    border-radius: 15px;
+  }
+}
+
+.parcel-component {
+  display: flex;
+  align-items: flex-start;
+  .parcel-grid {
+    max-width: calc(50% - 75px);
+    width: 100%;
+    padding: 30px;
+    margin: 0 7.5px;
+    background-color: #fff;
+    border-radius: 15px;
+    .parcel-title {
+      font-size: 18px;
+      color: $color-blue;
+      margin: 0 0 15px;
+    }
+    .parcel-contrl {
+      margin-top: 15px;
+      background-color: $color-light-purple;
+      color: $color-purple;
+      padding: 12px 15px;
+      display: inline-block;
+      border-radius: 10px;
+      cursor: pointer;
+    }
   }
 }
