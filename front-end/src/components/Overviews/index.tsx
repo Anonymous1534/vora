@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./overviews.scss";
 import DataTable from "react-data-table-component";
 
 const Overviews = () => {
@@ -19,13 +18,13 @@ const Overviews = () => {
       plate: "V430303",
       routeFrom: "Barcelana",
       routeTo: "Valencia",
-      process: 50,
+      process: 45,
     },
     {
       plate: "V430303",
       routeFrom: "Barcelana",
       routeTo: "Valencia",
-      process: 18,
+      process: 2,
     },
   ];
 
