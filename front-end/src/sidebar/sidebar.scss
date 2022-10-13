@@ -38,6 +38,7 @@
           opacity: 1;
           transition: 0.5s;
           transition-delay: 0.3s;
+          z-index: 1;
         }
       }
       .button-sidebar {
@@ -64,6 +65,7 @@
         top: 30px;
         max-width: 230px;
         width: 100%;
+        z-index: -1;
         .sm-logo {
           display: flex;
           align-items: center;
@@ -194,6 +196,7 @@
         position: relative;
         padding: 25px 0 0;
         opacity: 0;
+        z-index: -1;
 
         position: fixed;
         bottom: 15px;

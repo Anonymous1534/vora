@@ -399,6 +399,56 @@
       }
     }
   }
+  &.truck-details {
+    .shipments-group {
+      .shipments-card {
+        .sc-header {
+          .sc-head-detail {
+            .sc-hl-time {
+              &.truck-details {
+                margin-left: 15px;
+                padding: 4px 10px;
+                border-radius: 5px;
+                font-size: 10px;
+                font-weight: bold;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+        &.available {
+          .sc-header {
+            .sc-head-detail {
+              .sc-hl-time {
+                color: #fff;
+                background-color: $color-green;
+              }
+            }
+          }
+        }
+        &.departure {
+          .sc-header {
+            .sc-head-detail {
+              .sc-hl-time {
+                color: #fff;
+                background-color: $color-orange;
+              }
+            }
+          }
+        }
+        &.maintainance {
+          .sc-header {
+            .sc-head-detail {
+              .sc-hl-time {
+                color: #fff;
+                background-color: $color-red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .error-component {
   background-color: #fff;
@@ -425,6 +475,9 @@
 .shipment-details-component {
   display: flex;
   align-items: flex-start;
+  &.truck-details {
+    align-items: inherit;
+  }
   .sdc-truck-load {
     max-width: 535px;
     width: 100%;
@@ -432,6 +485,10 @@
     padding: 30px;
     background-color: #fff;
     border-radius: 15px;
+    &.truck-details {
+      min-width: 535px;
+      max-width: 100%;
+    }
     .sdc-tl-header {
       display: flex;
       align-items: flex-end;
@@ -559,6 +616,52 @@
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
+    &.truck-details {
+      background-color: transparent;
+      padding: 0;
+      max-width: 460px;
+    }
+    .sdc-grid-2 {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      .sdc-g2-items {
+        max-width: calc(50% - 65px);
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 7.5px 15px;
+        border-radius: 10px;
+        box-shadow: $box-shadow-basic;
+        display: flex;
+        align-items: center;
+        &:nth-child(n + 3) {
+          margin: 0 7.5px 0;
+        }
+        .sdc-g2-i-ico {
+          margin-right: 15px;
+          .sdc-g2-i-ico-pad {
+            background-color: $color-lightness-gray;
+            border-radius: 50%;
+            padding: 10px;
+            svg {
+              fill: $color-purple;
+            }
+          }
+        }
+        .sdc-g2-i-detail {
+          .sdc-g2id-title {
+            color: $color-blue;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .sdc-g2id-value {
+            color: $color-light-gray;
+            font-size: 11px;
+          }
+        }
+      }
+    }
   }
 }
 

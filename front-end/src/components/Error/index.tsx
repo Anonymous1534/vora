@@ -31,9 +31,9 @@ const Error = () => {
           </g>
         </svg>
       </div>
-      <div className="error-c-text">ไม่พบหน้าที่คุณต้องการ</div>
+      <div className="error-c-text">Page not found</div>
       <div className="error-c-btn">
-        <Link to="/">กลับไปหน้าแรก</Link>
+        <Link to="/">Go home</Link>
       </div>
     </div>
   );

@@ -16,3 +16,15 @@ $box-shadow-basic: 0 0 20px 0px $color-shadow;
 
 // progress-bar-overview
 $size-pgb-overview: 300px;
+
+.text-danger {
+  color: $color-red !important;
+}
+
+.text-warning {
+  color: $color-orange !important;
+}
+
+.text-success {
+  color: $color-green !important;
+}
