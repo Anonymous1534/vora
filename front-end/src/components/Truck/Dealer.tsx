@@ -1,27 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-const Truck = () => {
+import { Link } from "react-router-dom";
+const Dealer = () => {
   const truckData = [
     {
       id: 1,
-      plateNumber: "V435222",
-      mileRate: 1003,
+      plateNumber: "V4352546",
       model: "IVECO 80E18",
-      status: "available",
-    },
-    {
-      id: 2,
-      plateNumber: "V435223",
-      mileRate: 2234,
-      model: "IVECO 80E18",
-      status: "departure",
-    },
-    {
-      id: 3,
-      plateNumber: "V435224",
-      mileRate: 123,
-      model: "IVECO 80E18",
-      status: "maintainance",
+      price: 30000,
     },
   ];
 
@@ -31,24 +16,18 @@ const Truck = () => {
         <div className="shipments-group">
           {truckData.map((truck: any) => {
             return (
-              <Link
-                to="/truck-details"
-                className={`shipments-card ${truck.status}`}
-              >
+              <div className="shipments-card">
                 <div className="sc-header">
                   <div className="sc-head-detail">
                     <div className="sc-hl-desination">{truck.model}</div>
-                    <div className="sc-hl-time truck-details">
-                      {truck.status}
-                    </div>
                   </div>
                 </div>
                 <div className="sc-body">
                   <div className="sc-b-detial">
                     <div className="sc-b-items">
-                      <div className="sc-bi-field">Mile rate</div>
+                      <div className="sc-bi-field">Price</div>
                       <div className="sc-bi-value">
-                        {truck.mileRate} <span>km</span>
+                        {truck.price} <span>$</span>
                       </div>
                     </div>
                     <div className="sc-b-items">
@@ -56,8 +35,7 @@ const Truck = () => {
                       <div className="sc-bi-value">{truck.plateNumber}</div>
                     </div>
                     <div className="sc-b-items">
-                      <div className="sc-bi-field">Truck</div>
-                      <div className="sc-bi-value">{truck.model}</div>
+                      <div className="sc-bi-btn">Buy</div>
                     </div>
                   </div>
                   <div className="sc-b-truck-load">
@@ -66,7 +44,7 @@ const Truck = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -75,4 +53,4 @@ const Truck = () => {
   );
 };
 
-export default Truck;
+export default Dealer;

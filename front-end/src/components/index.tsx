@@ -9,6 +9,8 @@ import Error from "./Error";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Truck from "./Truck/Truck";
 import TruckDetail from "./Truck/TruckDetail";
+import TruckComponent from "./Truck";
+import Dealer from "./Truck/Dealer";
 
 const Components = () => {
   return (
@@ -21,10 +23,11 @@ const Components = () => {
             <Route index element={<Shipments />} />
             <Route path="details" element={<Details />} />
           </Route>
-          <Route path="/truck">
+          <Route path="/truck" element={<TruckComponent />}>
             <Route index element={<Truck />} />
-            <Route path="details" element={<TruckDetail />} />
+            <Route path="dealer" element={<Dealer />} />
           </Route>
+          <Route path="/truck-details" element={<TruckDetail />} />
           <Route path="/parcels" element={<Parcel />} />
           <Route path="*" element={<Error />} />
         </Routes>
